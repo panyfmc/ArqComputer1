@@ -220,7 +220,6 @@ int main(int argc, char *argv[]) {
           R[31] = R[31] & ~0b1;
         }
 
-
       // 0x????????:	add rz,rx,ir Rz=Rx+IR=0x????????,SR=0x????????
         sprintf(instrucao, "add %s,%s,%s", getRegisterSmaller(z), getRegisterSmaller(x), getRegisterSmaller(y));
         fprintf(output, "0x%08X:\t%-25s\t%s=%s+%s=0x%08X,SR=0x%08X\n", pc, instrucao, getRegisterBigger(z), getRegisterBigger(x), getRegisterBigger(y), R[z], R[31]);
@@ -230,7 +229,7 @@ int main(int argc, char *argv[]) {
 
       // sla
       case 0b000100:
-
+        //switch para armazenar instruções de mesmo endereço
         switch (subcode) 
         {
           //sla
